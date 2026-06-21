@@ -140,6 +140,88 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 .foot a{color:var(--on-navy);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);}
 
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+/* ---- Submission CTA (home) ---- */
+.cta{background:var(--paper);}
+.cta .wrap{padding:34px 28px 6px;}
+.cta-card{border:1px solid var(--line);border-left:3px solid var(--accent);background:#FBFBFC;padding:24px 24px 26px;}
+.cta-card .clbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;}
+.cta-card h2{font-family:var(--mono);font-weight:600;font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin:0 0 10px;}
+.cta-card p{font-size:1rem;line-height:1.55;color:#33414C;margin:0 0 18px;max-width:66ch;}
+
+/* ---- Buttons ---- */
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+ background:var(--navy);color:#fff;border:1px solid var(--navy);padding:13px 22px;text-decoration:none;cursor:pointer;transition:background .15s,transform .15s;}
+.btn:hover{background:#16304a;transform:translateY(-1px);}
+.btn .arr{color:var(--accent-bright);}
+.btn:disabled{opacity:.6;cursor:default;transform:none;}
+
+/* ---- Submit view ---- */
+#submit .brief-head{margin-bottom:6px;}
+.crisis{border:1px solid var(--line);border-left:3px solid var(--accent-bright);background:#FFF7F8;padding:16px 20px;margin:24px 0 8px;}
+.crisis .clbl{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.crisis p{margin:0;font-size:.96rem;line-height:1.6;color:#33414C;}
+.crisis strong{color:#0B141C;font-weight:600;}
+.crisis a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(158,27,50,.3);}
+
+.mission{margin:30px 0 8px;}
+.mission p{margin:0 0 13px;font-size:1.04rem;line-height:1.6;color:#2C3A45;}
+.mission .pull{font-family:var(--mono);font-weight:600;font-size:1.06rem;line-height:1.45;color:var(--ink);border-left:3px solid var(--accent);padding-left:14px;margin:18px 0 4px;}
+
+.howto{border-top:1px solid var(--line);margin-top:30px;padding-top:24px;}
+.howto h2{font-family:var(--mono);font-weight:600;font-size:1.06rem;color:var(--ink);margin:0 0 12px;}
+.howto ul{margin:0;padding-left:1.3em;}
+.howto li{margin:0 0 10px;font-size:1rem;line-height:1.55;color:#33414C;}
+.howto li::marker{color:var(--accent);}
+.howto strong{color:#0B141C;font-weight:600;}
+
+/* ---- Form ---- */
+#vo-form{margin-top:30px;border-top:1px solid var(--line);padding-top:30px;}
+.fld{margin:0 0 22px;}
+.fld label{display:block;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--ink);margin-bottom:7px;line-height:1.4;}
+.fld .req{color:var(--accent);margin-left:.25em;}
+.fld .opt{color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;}
+.fld .hint{display:block;font-family:var(--serif);font-size:.92rem;font-style:italic;color:var(--muted);margin:-2px 0 9px;font-weight:400;letter-spacing:0;}
+.fld input[type=text],.fld input[type=email],.fld textarea{
+ width:100%;font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--ink);background:#fff;
+ border:1px solid var(--line);border-radius:0;padding:11px 13px;transition:border-color .15s,box-shadow .15s;}
+.fld textarea{min-height:118px;resize:vertical;}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+
+.opts{display:flex;flex-direction:column;border:1px solid var(--line);}
+.opts label{display:flex;align-items:flex-start;gap:11px;font-family:var(--serif);font-size:1rem;font-weight:400;letter-spacing:0;color:var(--ink);
+ padding:13px 15px;margin:0;cursor:pointer;border-bottom:1px solid var(--line);text-transform:none;line-height:1.4;}
+.opts label:last-child{border-bottom:0;}
+.opts label:hover{background:var(--paper2);}
+.opts input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex:0 0 auto;}
+.opts .od{display:block;font-size:.88rem;color:var(--muted);margin-top:2px;}
+
+.submit-btn{margin-top:4px;}
+.form-status{font-family:var(--mono);font-size:.9rem;line-height:1.5;margin-top:16px;padding:12px 15px;display:none;}
+.form-status.err{display:block;background:#FFF7F8;border:1px solid var(--accent);color:#7A1326;}
+.contact-line{font-family:var(--mono);font-size:.84rem;letter-spacing:.02em;color:var(--muted);margin-top:26px;padding-top:18px;border-top:1px solid var(--line);}
+.contact-line a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(158,27,50,.3);}
+
+.thanks{display:none;border:1px solid var(--line);border-left:3px solid var(--accent);background:#FBFBFC;padding:30px 26px;margin-top:8px;}
+.thanks .tlbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;}
+.thanks h2{font-family:var(--mono);font-weight:600;font-size:1.35rem;color:var(--ink);margin:0 0 12px;line-height:1.2;}
+.thanks p{font-size:1.05rem;line-height:1.6;color:#2C3A45;margin:0 0 14px;}
+.thanks .tback{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;}
+.thanks .tback:hover{color:var(--accent);}
+
+/* ---- Footer additions ---- */
+.foot .fcontact{font-size:.9rem;color:var(--mut-navy);margin:0 0 8px;}
+.foot .fcontact a{color:var(--on-navy);}
+.foot .fcta{font-family:var(--mono);font-size:12px;letter-spacing:.08em;margin:12px 0 14px;}
+.foot .fcta a{color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.2);}
+.foot .f250{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut-navy);margin:12px 0 0;border-top:1px solid rgba(255,255,255,.10);padding-top:14px;}
+.foot .f250 .star{color:#fff;}
+
+@media(max-width:560px){
+ .cta-card{padding:20px 18px 22px;}
+ .btn{width:100%;justify-content:center;}
+ .crisis,.thanks{padding-left:16px;padding-right:16px;}
+}
 </style>
 </head><body>
 <div class="banner"><div class="row"><a href="#/"><span class="star">★</span> Veteran Operating Profile</a><span class="right">A veteran collective</span></div></div>
@@ -153,6 +235,14 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
  <p class="byline">A project by <strong>Mark Tompkins</strong>, in partnership with veterans</p>
 </div></header>
 <div class="ribbon"></div>
+<section class="cta"><div class="wrap">
+ <div class="cta-card">
+  <p class="clbl">Tell us what you’re up against</p>
+  <h2>Stuck putting your own situation into words?</h2>
+  <p>Write it in your own words — the situation, the strength you can’t quite explain, the thing that keeps getting lost in translation at work. A group of veterans will help you put it in terms your employer can act on. Privately, or as a brief that helps the next veteran too.</p>
+  <a class="btn" href="#/submit">Share your situation <span class="arr">→</span></a>
+ </div>
+</div></section>
 <section class="about"><div class="wrap">
  <p class="lbl">About</p>
  <h2>Built for veterans, by veterans.</h2>
@@ -529,20 +619,118 @@ Short, scheduled check-ins on longer efforts let me show progress, surface block
   <nav class="brief-nav"><a class="bn prev" href="#/brief/07"><span>← Previous</span><b>Hypervigilance</b></a><a class="bn home" href="#/">All briefs</a><span class="bn spacer"></span></nav>
  </div>
 </section>
+<section id="submit" class="view article" aria-labelledby="t-submit">
+<div class="wrap">
+ <a class="backlink" href="#/">← All briefs</a>
+ <header class="brief-head">
+  <p class="eyebrow">Share your situation</p>
+  <h1 id="t-submit" tabindex="-1">Tell us what you’re trying to say</h1>
+  <p class="standfirst">You write it in your own words. A group of veterans reads it, does the work, and helps you put it in terms your employer can actually act on.</p>
+ </header>
+
+ <div class="crisis">
+  <span class="clbl">If you’re in crisis, this isn’t the place</span>
+  <p>This form isn’t monitored in real time. If you’re thinking about harming yourself or someone else, reach a person right now: call <strong>911</strong>, or call the <strong>Veterans Crisis Line — dial 988, then press 1</strong>, or text <strong>838255</strong>. You don’t have to carry it alone.</p>
+ </div>
+
+ <div class="mission">
+  <p>We’re not lawyers or medical professionals. We’re a group of veterans who’ve stood where you’re standing, and we know how much gets lost in the move from the uniform to the cubicle.</p>
+  <p>Most of us don’t fail because the work is too hard — we’ve held some of the hardest jobs there are. Where it gets hard is the translation: taking what service hardwired into you and saying it in a way a civilian employer understands, so they get the best of what you bring instead of the worst read on it.</p>
+  <p>We won’t bash your employer, and we won’t hand you a grievance. You don’t know what you don’t know — neither did we. The point is to help you communicate, turn what can feel like a weakness into the strength it actually is, and rebuild what you already built once, on new ground.</p>
+  <p class="pull">The stress isn’t the job. It’s rebuilding success on a different foundation — and your foundation is stronger.</p>
+ </div>
+
+ <div class="howto">
+  <h2>What happens to what you send</h2>
+  <ul>
+   <li><strong>Your name and email are optional.</strong> A name, if you give one, is only ever used for a private reply — it is never published.</li>
+   <li><strong>If you leave an email,</strong> we’ll send you whatever we write <em>before</em> anything goes public, so you see it first.</li>
+   <li><strong>If you don’t leave an email</strong> and your situation could help others, we may publish a brief about it — with every identifying detail stripped out first.</li>
+   <li><strong>Turnaround is usually 2–3 business days.</strong> We read every one.</li>
+  </ul>
+ </div>
+
+ <form id="vo-form" action="https://formspree.io/f/xlgyrkra" method="POST">
+  <input type="hidden" name="_subject" value="New veteran submission — Veteran Operating Profile">
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+  <div class="fld">
+   <label for="f-name">Your name <span class="opt">— optional, for a private reply only, never published</span></label>
+   <input type="text" id="f-name" name="name" autocomplete="name">
+  </div>
+
+  <div class="fld">
+   <label for="f-email">Email <span class="opt">— optional</span></label>
+   <span class="hint">Leave it if you’d like a reply, or to see your brief before it’s ever published.</span>
+   <input type="email" id="f-email" name="email" autocomplete="email">
+  </div>
+
+  <div class="fld">
+   <label for="f-situation">What are you trying to say — or what’s the situation?<span class="req">*</span></label>
+   <span class="hint">The thing that’s hard to put into words at work. As much or as little as you want.</span>
+   <textarea id="f-situation" name="situation" required></textarea>
+  </div>
+
+  <div class="fld">
+   <label for="f-tried">What have you tried so far? <span class="opt">— optional</span></label>
+   <textarea id="f-tried" name="tried"></textarea>
+  </div>
+
+  <div class="fld">
+   <label for="f-strengths">What are the biggest strengths you carried over from the military? <span class="opt">— optional</span></label>
+   <textarea id="f-strengths" name="strengths"></textarea>
+  </div>
+
+  <div class="fld">
+   <label for="f-use">Where are those strengths best used — or where are they being wasted? <span class="opt">— optional</span></label>
+   <textarea id="f-use" name="strengths_use"></textarea>
+  </div>
+
+  <div class="fld">
+   <label for="f-comments">Anything else you want us to know? <span class="opt">— optional</span></label>
+   <textarea id="f-comments" name="comments"></textarea>
+  </div>
+
+  <div class="fld">
+   <label>What would you like back?</label>
+   <div class="opts">
+    <label><input type="radio" name="reply_type" value="Private reply only"><span>A private reply only<span class="od">Just between us — nothing published.</span></span></label>
+    <label><input type="radio" name="reply_type" value="A published brief to help other veterans"><span>A published brief that helps other veterans<span class="od">Every identifying detail removed first.</span></span></label>
+    <label><input type="radio" name="reply_type" value="Both"><span>Both<span class="od">You’ll see your copy first, then we’ll let you know when it’s live.</span></span></label>
+   </div>
+  </div>
+
+  <button type="submit" class="btn submit-btn">Send it to the team <span class="arr">→</span></button>
+  <p class="form-status" id="vo-status" role="status" aria-live="polite"></p>
+ </form>
+
+ <p class="contact-line">Prefer email? Reach us at <a href="mailto:Project.Veteran.Overwatch@gmail.com">Project.Veteran.Overwatch@gmail.com</a></p>
+
+ <div class="thanks" id="vo-thanks" role="status" aria-live="polite">
+  <p class="tlbl">Received</p>
+  <h2>Thank you for your submission.</h2>
+  <p>Your submission can potentially help other veterans in your same situation.</p>
+  <p>If you left an email, you’ll hear back from us — usually within 2–3 business days.</p>
+  <a class="tback" href="#/">← Back to all briefs</a>
+ </div>
+</div>
+</section>
 </main>
 <footer class="foot"><div class="wrap-wide">
  <p class="fbrand">Veteran Operating Profile</p>
  <p>Built for veterans, by veterans — to help communicate what can be hard to say in the move from military service to the corporate world. Written in the first person so any veteran can adapt and share these with their own leadership.</p>
  <p class="fdisc">Lived veteran experiences — not medical, legal, or clinical advice, and not reviewed by a doctor. For diagnosis or treatment, speak with a qualified professional or the VA.</p>
  <p class="fnames">Mark Tompkins · in partnership with veterans</p>
- <p><a href="#/">Return to all briefs ↑</a></p>
+ <p class="fcontact">Questions, or want to add your story? <a href="mailto:Project.Veteran.Overwatch@gmail.com">Project.Veteran.Overwatch@gmail.com</a></p>
+ <p class="fcta"><a href="#/submit">Share your situation →</a> &nbsp;·&nbsp; <a href="#/">Return to all briefs ↑</a></p>
+ <p class="f250"><span class="star">★</span> 1776–2026 · Honoring America’s 250th</p>
 </div></footer>
 <script>
 (function(){
  var views=[].slice.call(document.querySelectorAll('.view'));
  function route(){
   var h=location.hash.replace(/^#\/?/,'');
-  var m=h.match(/^brief\/(\d+)/), id=m?('brief-'+m[1]):'home';
+  var m=h.match(/^brief\/(\d+)/), id=m?('brief-'+m[1]):(h==='submit'?'submit':'home');
   var t=document.getElementById(id)||document.getElementById('home');
   views.forEach(function(v){v.classList.remove('view--active');});
   void t.offsetWidth; t.classList.add('view--active');
@@ -554,6 +742,37 @@ Short, scheduled check-ins on longer efforts let me show progress, surface block
  }
  window.addEventListener('hashchange',route);
  route();
+})();
+</script>
+<script>
+(function(){
+ var form=document.getElementById('vo-form');
+ if(!form)return;
+ var statusEl=document.getElementById('vo-status');
+ var thanks=document.getElementById('vo-thanks');
+ var btn=form.querySelector('button[type=submit]');
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(btn){btn.disabled=true;btn.textContent='Sending\u2026';}
+  if(statusEl){statusEl.className='form-status';statusEl.textContent='';}
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+  .then(function(r){
+   if(r.ok){
+    form.style.display='none';
+    if(thanks){thanks.style.display='block';thanks.scrollIntoView({behavior:'smooth',block:'start'});}
+   }else{
+    r.json().then(function(d){
+     showErr(d&&d.errors?d.errors.map(function(x){return x.message;}).join(', '):null);
+    }).catch(function(){showErr(null);});
+   }
+  })
+  .catch(function(){showErr(null);});
+  function showErr(msg){
+   if(btn){btn.disabled=false;btn.innerHTML='Send it to the team <span class="arr">\u2192</span>';}
+   if(statusEl){statusEl.className='form-status err';
+    statusEl.textContent=(msg?msg+' ':'Something went wrong sending that. ')+'You can also email us directly at Project.Veteran.Overwatch@gmail.com.';}
+  }
+ });
 })();
 </script>
 </body></html>
