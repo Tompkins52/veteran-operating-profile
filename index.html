@@ -1,15 +1,15 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Veteran Operating Profile — A Leadership Briefing</title>
-<meta name="description" content="Six cited briefings translating a combat-intelligence operating style — and the realities that come with it — into how to lead it.">
+<title>Veteran Operating Profile — A Briefing Library</title>
+<meta name="description" content="Built for veterans, by veterans — helping veterans communicate strengths, friction, and PTSD in terms an employer can act on.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
  --ink:#14202B; --paper:#EEF0F1; --paper2:#E5E8EA; --navy:#0F1E2D;
- --amber:#BE841F; --amber-soft:rgba(190,132,31,.10);
+ --accent:#9E1B32; --accent-soft:rgba(158,27,50,.08); --accent-bright:#E0394A;
  --line:#CBD2D7; --muted:#5C6B76; --on-navy:#D8DEE3; --mut-navy:#8A99A4;
  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
  --serif:'IBM Plex Serif',Georgia,'Times New Roman',serif;
@@ -23,8 +23,8 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 .banner{position:sticky;top:0;z-index:50;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.10);}
 .banner .row{max-width:1040px;margin:0 auto;padding:7px 28px;display:flex;justify-content:space-between;align-items:center;
  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;}
-.banner a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:.55em;}
-.banner .dot{width:6px;height:6px;background:var(--amber);display:inline-block;}
+.banner a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:.5em;}
+.banner .star{color:#fff;font-size:12px;line-height:1;}
 .banner .right{color:var(--mut-navy);}
 @media(max-width:560px){.banner .right{display:none;}}
 
@@ -35,46 +35,70 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 }
 
-.hero{background:var(--navy);color:var(--on-navy);border-bottom:3px solid var(--amber);}
-.hero .wrap-wide{padding-top:76px;padding-bottom:64px;}
-.hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin:0 0 22px;}
-.hero h1{font-family:var(--mono);font-weight:600;color:#fff;font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 22px;max-width:17ch;}
+.ribbon{height:4px;background:linear-gradient(90deg,#23456b 0,#23456b 33.34%,#e9edf0 33.34%,#e9edf0 66.67%,var(--accent) 66.67%,var(--accent) 100%);}
+
+.hero{background:var(--navy);color:var(--on-navy);}
+.hero .wrap-wide{padding-top:76px;padding-bottom:60px;}
+.hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-bright);margin:0 0 22px;}
+.hero h1{font-family:var(--mono);font-weight:600;color:#fff;font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 22px;max-width:18ch;}
 .hero .stand{font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.55;color:var(--on-navy);max-width:60ch;margin:0;}
 .hero .meta{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut-navy);margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);}
+.hero .byline{font-family:var(--mono);font-size:12px;letter-spacing:.07em;color:var(--on-navy);margin:15px 0 0;}
+.hero .byline strong{color:#fff;font-weight:600;}
 @media(prefers-reduced-motion:no-preference){
- .hero .eyebrow,.hero h1,.hero .stand,.hero .meta{animation:rise .6s ease both;}
- .hero h1{animation-delay:.06s;}.hero .stand{animation-delay:.12s;}.hero .meta{animation-delay:.18s;}
+ .hero .eyebrow,.hero h1,.hero .stand,.hero .meta,.hero .byline{animation:rise .6s ease both;}
+ .hero h1{animation-delay:.06s;}.hero .stand{animation-delay:.12s;}.hero .meta{animation-delay:.18s;}.hero .byline{animation-delay:.18s;}
  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
 }
 
-.index{padding:54px 0 26px;}
+.about{background:var(--paper);}
+.about .wrap{padding:50px 28px 14px;}
+.about .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;}
+.about h2{font-family:var(--mono);font-weight:600;font-size:1.45rem;letter-spacing:-.01em;color:var(--ink);line-height:1.2;margin:0 0 16px;}
+.about p{font-size:1.05rem;line-height:1.6;color:#2C3A45;margin:0 0 14px;max-width:64ch;}
+.about .founders{font-family:var(--mono);font-size:.85rem;letter-spacing:.03em;color:var(--muted);margin-top:18px;padding-top:16px;border-top:1px solid var(--line);}
+.about .founders strong{color:var(--ink);font-weight:600;}
+
+.noteband{background:var(--paper);}
+.noteband .wrap{padding:6px 28px 4px;}
+.note{border:1px solid var(--line);border-left:3px solid var(--accent);background:#FBFBFC;padding:16px 20px;}
+.note-label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.note p{margin:0;font-size:.95rem;line-height:1.55;color:#33414C;max-width:72ch;}
+
+.index{padding:50px 0 30px;}
 .index .lead{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;}
 .grp{margin-top:38px;}
-.grp .glabel{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);
+.grp .glabel{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
  padding-bottom:10px;border-bottom:1px solid var(--ink);margin:0 0 2px;}
 .row{display:flex;align-items:baseline;gap:20px;text-decoration:none;color:inherit;
  padding:18px 4px;border-bottom:1px solid var(--line);transition:background .15s,padding .15s;}
 .row:hover,.row:focus-visible{background:var(--paper2);padding-left:12px;outline:none;}
-.row .num{font-family:var(--mono);font-size:14px;color:var(--amber);min-width:2.4em;}
+.row .num{font-family:var(--mono);font-size:14px;color:var(--accent);min-width:2.4em;}
 .row .mid{flex:1;}
 .row .rt{display:block;font-family:var(--mono);font-size:1.12rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
-.row:hover .rt{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--amber);}
+.row:hover .rt{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent);}
 .row .rd{display:block;font-size:1rem;color:var(--muted);margin-top:3px;}
-.row .arr{font-family:var(--mono);color:var(--amber);align-self:center;transition:transform .15s;}
+.row .arr{font-family:var(--mono);color:var(--accent);align-self:center;transition:transform .15s;}
 .row:hover .arr{transform:translateX(5px);}
+
+.creed{background:var(--navy);color:var(--on-navy);}
+.creed .wrap{max-width:680px;padding:48px 28px 52px;text-align:center;}
+.creed-label{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-bright);margin:0 0 22px;}
+.creed-body{font-size:1.04rem;line-height:1.95;color:var(--on-navy);margin:0;}
+.creed-body .ethos{color:#fff;font-weight:600;}
 
 .article{padding-bottom:54px;}
 .backlink{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin:34px 0 26px;}
-.backlink:hover{color:var(--amber);}
+.backlink:hover{color:var(--accent);}
 .brief-head{border-bottom:1px solid var(--line);padding-bottom:24px;}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 14px;}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;}
 .eyebrow .sep{color:var(--muted);margin:0 .45em;}
 .brief-head h1{font-family:var(--mono);font-weight:600;font-size:clamp(1.6rem,4vw,2.35rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 14px;color:var(--ink);outline:none;}
 .standfirst{font-style:italic;font-size:1.18rem;line-height:1.5;color:#2C3A45;margin:0 0 14px;}
 .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
 
-.bluf{border-left:3px solid var(--amber);background:var(--amber-soft);padding:16px 20px;margin:26px 0 6px;}
-.bluf .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.bluf{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;margin:26px 0 6px;}
+.bluf .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
 .bluf p{margin:0;font-size:1.02rem;}
 
 .body{margin-top:6px;}
@@ -84,19 +108,19 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 .body strong{font-weight:600;color:#0B141C;}
 .body ul,.body ol{margin:0 0 14px;padding-left:1.4em;}
 .body li{margin:0 0 9px;padding-left:.2em;}
-.body li::marker{color:var(--amber);}
+.body li::marker{color:var(--accent);}
 .body a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--line);word-break:break-word;}
-.body a:hover{text-decoration-color:var(--amber);color:var(--amber);}
+.body a:hover{text-decoration-color:var(--accent);color:var(--accent);}
 .body hr{border:0;border-top:1px solid var(--line);margin:30px 0;}
 
 .refs{margin-top:6px;}
 .refs h2{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;}
 .refs ol{font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--muted);}
 .refs li{margin-bottom:10px;}
-.refs li::marker{color:var(--amber);}
+.refs li::marker{color:var(--accent);}
 .refs em{font-style:italic;color:var(--ink);}
 .refs a{color:var(--muted);text-decoration-color:var(--line);word-break:break-all;}
-.refs a:hover{color:var(--amber);}
+.refs a:hover{color:var(--accent);}
 
 .brief-nav{display:flex;gap:16px;justify-content:space-between;align-items:center;margin-top:46px;border-top:1px solid var(--line);padding-top:22px;}
 .bn{flex:1;text-decoration:none;color:inherit;font-family:var(--mono);}
@@ -104,55 +128,58 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 .bn b{font-weight:600;font-size:.98rem;color:var(--ink);}
 .bn.next{text-align:right;}
 .bn.home{flex:0 0 auto;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-.bn.home:hover,.bn:hover b{color:var(--amber);}
+.bn.home:hover,.bn:hover b{color:var(--accent);}
 .bn.spacer{visibility:hidden;}
 
-.foot{background:var(--navy);color:var(--mut-navy);margin-top:40px;}
+.foot{background:var(--navy);color:var(--mut-navy);border-top:1px solid rgba(255,255,255,.10);}
 .foot .wrap-wide{padding:34px 28px;}
 .foot .fbrand{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy);margin:0 0 10px;}
 .foot p{font-size:.92rem;line-height:1.55;color:var(--mut-navy);margin:0 0 8px;max-width:72ch;}
+.foot .fdisc{font-size:.85rem;font-style:italic;color:var(--mut-navy);max-width:72ch;margin:0 0 8px;}
+.foot .fnames{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--on-navy);margin:14px 0 10px;}
 .foot a{color:var(--on-navy);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);}
 
-.hero .byline{font-family:var(--mono);font-size:12px;letter-spacing:.07em;color:var(--on-navy);margin:15px 0 0;}
-.hero .byline strong{color:#fff;font-weight:600;}
-
-.about{border-top:1px solid var(--line);background:var(--paper);}
-.about .wrap{padding:50px 28px 14px;}
-.about .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 14px;}
-.about h2{font-family:var(--mono);font-weight:600;font-size:1.45rem;letter-spacing:-.01em;color:var(--ink);line-height:1.2;margin:0 0 16px;}
-.about p{font-size:1.05rem;line-height:1.6;color:#2C3A45;margin:0 0 14px;max-width:64ch;}
-.about .founders{font-family:var(--mono);font-size:.85rem;letter-spacing:.03em;color:var(--muted);margin-top:18px;padding-top:16px;border-top:1px solid var(--line);}
-.about .founders strong{color:var(--ink);font-weight:600;}
-.foot .fnames{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--on-navy);margin:14px 0 10px;}
-
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 </style>
 </head><body>
-<div class="banner"><div class="row"><a href="#/"><span class="dot"></span> Veteran Operating Profile</a><span class="right">A veteran collective</span></div></div>
+<div class="banner"><div class="row"><a href="#/"><span class="star">★</span> Veteran Operating Profile</a><span class="right">A veteran collective</span></div></div>
 <main>
 <section id="home" class="view view--active">
 <header class="hero"><div class="wrap-wide">
- <p class="eyebrow">A collective of veterans // For the civilian workplace</p>
- <h1>How veterans operate — and how to lead them.</h1>
- <p class="stand">We’re a group of veterans putting words to the same passage — the move from military service to the civilian workplace. The strengths we carry in, and the friction we hit. Each briefing turns that into something you can hand to a manager. Grounded in real transitions, military doctrine, and organizational‑psychology research.</p>
- <p class="meta">Six cited briefs · For managers, HR &amp; fellow veterans</p>
- <p class="byline">A project by <strong>Mark Tompkins</strong> &amp; <strong>Lorenzo McCoy</strong> — U.S. military veterans</p>
+ <p class="eyebrow">Built for veterans, by veterans</p>
+ <h1>Helping veterans communicate — and employers understand.</h1>
+ <p class="stand">Communication in the military and communication in the corporate world are not the same language. Veteran Operating Profile helps veterans put the strengths they bring, the friction they hit, and PTSD into terms an employer can act on. Training built for employers is coming next.</p>
+ <p class="meta">Seven cited briefs · For veterans, managers &amp; HR</p>
+ <p class="byline">A project by <strong>Mark Tompkins</strong>, in partnership with veterans</p>
 </div></header>
+<div class="ribbon"></div>
 <section class="about"><div class="wrap">
  <p class="lbl">About</p>
- <h2>A collective effort.</h2>
- <p>Veteran Operating Profile is a collaboration among veterans working through the same passage — from military service to the civilian workplace. The strengths carry over; so do the harder parts. Most managers have had neither one explained to them. These briefings close that gap.</p>
- <p>Each brief is written in the first person by design — a voice any transitioning veteran can adopt, adapt, and hand to their own leadership. Not one person’s story, but a shared playbook drawn from many.</p>
- <p class="founders">Founded by <strong>Mark Tompkins</strong> &amp; <strong>Lorenzo McCoy</strong> · with fellow veterans</p>
+ <h2>Built for veterans, by veterans.</h2>
+ <p>This is a site for veterans, by veterans — built to help say the things that are hard to say at work. Communication in the military and communication in the corporate world are not the same language, and a lot gets lost in the crossing. These briefings translate.</p>
+ <p>We put the strengths, the friction, and PTSD into terms an employer can act on — written in the first person so any veteran can adopt the voice, adapt it, and hand it to their own leadership. Not one person’s story, but a shared playbook drawn from many.</p>
+ <p>Next, we’re building the other side of the conversation: training for employers and managers on how to support — and get the best from — veterans living with PTSD.</p>
+ <p class="founders">Founded by <strong>Mark Tompkins</strong>, in partnership with fellow veterans</p>
 </div></section>
-<section class="index"><div class="wrap"><p class="lead">Contents</p><div class="grp"><p class="glabel">Operating Strengths</p><a class="row" href="#/brief/01"><span class="num">01</span><span class="mid"><span class="rt">The 70% Standard</span><span class="rd">Acting on 70% of the information — decisively, not recklessly.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/02"><span class="num">02</span><span class="mid"><span class="rt">Servant Leadership</span><span class="rd">Team first — and what the research says that returns.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/03"><span class="num">03</span><span class="mid"><span class="rt">Problem-Solving Under Constraint</span><span class="rd">When the answer is “it can’t be done.”</span></span><span class="arr">→</span></a></div><div class="grp"><p class="glabel">Working With Friction Points</p><a class="row" href="#/brief/04"><span class="num">04</span><span class="mid"><span class="rt">Deadlines &amp; Time Pressure</span><span class="rd">What a slipping deadline actually triggers — and how to deliver it.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/05"><span class="num">05</span><span class="mid"><span class="rt">Structure &amp; Predictability</span><span class="rd">Agendas, advance notice, and keeping bandwidth on the work.</span></span><span class="arr">→</span></a></div><div class="grp"><p class="glabel">The Business Case</p><a class="row" href="#/brief/06"><span class="num">06</span><span class="mid"><span class="rt">The Business Case for Flexibility</span><span class="rd">Near-zero cost in. Retention and loyalty out.</span></span><span class="arr">→</span></a></div></div></section>
+<section class="noteband"><div class="wrap">
+ <div class="note">
+  <span class="note-label">A note on what this is</span>
+  <p>These briefings are lived veteran experiences — not medical advice, and not reviewed or vetted by a doctor. They’re a shared, practical account from a group of veterans that may help others navigating the same thing. For diagnosis or treatment, please talk with a qualified professional or the VA.</p>
+ </div>
+</div></section>
+<section class="index"><div class="wrap"><p class="lead">Contents</p><div class="grp"><p class="glabel">Operating Strengths</p><a class="row" href="#/brief/01"><span class="num">01</span><span class="mid"><span class="rt">The 70% Standard</span><span class="rd">Acting on 70% of the information — decisively, not recklessly.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/02"><span class="num">02</span><span class="mid"><span class="rt">Servant Leadership</span><span class="rd">Team first — and what the research says that returns.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/03"><span class="num">03</span><span class="mid"><span class="rt">Problem-Solving Under Constraint</span><span class="rd">When the answer is “it can’t be done.”</span></span><span class="arr">→</span></a></div><div class="grp"><p class="glabel">PTSD in the Workplace</p><a class="row" href="#/brief/04"><span class="num">04</span><span class="mid"><span class="rt">What PTSD Means at Work</span><span class="rd">What the condition actually is — and how to talk about it.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/05"><span class="num">05</span><span class="mid"><span class="rt">Deadlines &amp; Time Pressure</span><span class="rd">What a slipping deadline actually triggers — and how to deliver it.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/06"><span class="num">06</span><span class="mid"><span class="rt">Structure &amp; Predictability</span><span class="rd">Agendas, advance notice, and keeping bandwidth on the work.</span></span><span class="arr">→</span></a></div><div class="grp"><p class="glabel">The Business Case</p><a class="row" href="#/brief/07"><span class="num">07</span><span class="mid"><span class="rt">The Business Case for Flexibility</span><span class="rd">Near-zero cost in. Retention and loyalty out.</span></span><span class="arr">→</span></a></div></div></section>
+<div class="ribbon"></div>
+<section class="creed"><div class="wrap">
+ <p class="creed-label">The Soldier’s Creed</p>
+ <p class="creed-body">I am an American Soldier.<br>I am a warrior and a member of a team.<br>I serve the people of the United States, and live the Army Values.<br><span class="ethos">I will always place the mission first.<br>I will never accept defeat.<br>I will never quit.<br>I will never leave a fallen comrade.</span><br>I am disciplined, physically and mentally tough, trained and proficient in my warrior tasks and drills.<br>I always maintain my arms, my equipment and myself.<br>I am an expert and I am a professional.<br>I stand ready to deploy, engage, and destroy the enemies of the United States of America in close combat.<br>I am a guardian of freedom and the American way of life.<br>I am an American Soldier.</p>
+</div></section>
 </section>
 
 <section id="brief-01" class="view article" aria-labelledby="t-01">
  <div class="wrap">
   <a class="backlink" href="#/">← All briefs</a>
   <header class="brief-head">
-   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 01 of 06</p>
+   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 01 of 07</p>
    <h1 id="t-01" tabindex="-1">The 70% Standard: How I Make Decisions — and How to Resource It</h1>
    <p class="standfirst">Acting on 70% of the information — decisively, not recklessly.</p>
    <p class="kicker">A working brief for leadership · cited</p>
@@ -190,7 +217,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
  <div class="wrap">
   <a class="backlink" href="#/">← All briefs</a>
   <header class="brief-head">
-   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 02 of 06</p>
+   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 02 of 07</p>
    <h1 id="t-02" tabindex="-1">Servant Leadership: Why I Put the Team First — and What It Returns</h1>
    <p class="standfirst">Team first — and what the research says that returns.</p>
    <p class="kicker">A working brief for leadership · cited</p>
@@ -233,7 +260,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
  <div class="wrap">
   <a class="backlink" href="#/">← All briefs</a>
   <header class="brief-head">
-   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 03 of 06</p>
+   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 03 of 07</p>
    <h1 id="t-03" tabindex="-1">When the Answer Is “It Can’t Be Done”: How I Solve Problems</h1>
    <p class="standfirst">When the answer is “it can’t be done.”</p>
    <p class="kicker">A working brief for leadership · cited</p>
@@ -262,15 +289,65 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
 <li>Richards, C. — peer-reviewed treatment of John Boyd’s OODA loop (iterative problem-solving under uncertainty): https://ooda.de/media/chet_richards_-_boyds_ooda_loop.pdf</li>
 </ol>
 <p><em>The clinical material here is context for working together, not a medical document, and post-traumatic growth describes one possible outcome of adversity, not a universal rule.</em></p></div></div>
-  <nav class="brief-nav"><a class="bn prev" href="#/brief/02"><span>← Previous</span><b>Servant Leadership</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/04"><span>Next →</span><b>Deadlines &amp; Time Pressure</b></a></nav>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/02"><span>← Previous</span><b>Servant Leadership</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/04"><span>Next →</span><b>What PTSD Means at Work</b></a></nav>
  </div>
 </section>
 <section id="brief-04" class="view article" aria-labelledby="t-04">
  <div class="wrap">
   <a class="backlink" href="#/">← All briefs</a>
   <header class="brief-head">
-   <p class="eyebrow">Working With Friction Points <span class="sep">//</span> Brief 04 of 06</p>
-   <h1 id="t-04" tabindex="-1">Deadlines, Time Pressure, and How to Get My Best Work</h1>
+   <p class="eyebrow">PTSD in the Workplace <span class="sep">//</span> Brief 04 of 07</p>
+   <h1 id="t-04" tabindex="-1">What PTSD Actually Means at Work</h1>
+   <p class="standfirst">What the condition actually is — and how to talk about it.</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>PTSD isn’t instability, and it isn’t fragility. It’s a specific, often-invisible response to having survived something extreme — and at work it shows up in specific, manageable ways. This brief lays out what it actually is, what it isn’t, and why a short, respectful conversation gets us both further than guesswork or walking on eggshells.</p></div>
+  <div class="body"><h2>1. What PTSD actually is</h2>
+<p>Post-traumatic stress is a recognized medical condition that can develop after a person experiences or witnesses a life-threatening or traumatic event. In plain terms, it’s a normal response to abnormal events — the brain’s threat-detection system stays switched on after the danger has passed. The U.S. Department of Veterans Affairs groups the symptoms into four kinds: reliving the event through intrusive memories or triggers, avoiding reminders of it, lasting shifts in mood and thinking, and being constantly on guard or keyed up — a state clinicians call hyperarousal (VA National Center for PTSD).</p>
+<p>Two facts matter most for an employer. It’s <strong>common</strong> — especially among combat veterans, where rates run far higher than in the general population (Nature Reviews Neurology). And it’s <strong>treatable, and highly individual</strong> — no two people have exactly the same symptoms or the same needs (VA; Job Accommodation Network). What’s true for me may not be true for the next veteran you work with.</p>
+<h2>2. What it is not</h2>
+<p>The myths do more damage at work than the condition does, so let me clear them up front:</p>
+<ul>
+<li>It is <strong>not</strong> a propensity for violence or instability. That stereotype is wrong, and it’s harmful.</li>
+<li>It is <strong>not</strong> an inability to perform. Plenty of high-functioning people — including people you’d never suspect — carry it while doing demanding work well.</li>
+<li>It is <strong>not</strong> visible. You usually cannot tell who has PTSD, which is exactly why being told is a sign of trust.</li>
+<li>It is <strong>not</strong> a character flaw, and it is <strong>not</strong> weakness. It’s an injury, in the same sense a physical one is.</li>
+<li>It does <strong>not</strong> make me a danger to the team.</li>
+</ul>
+<h2>3. How it can show up — honestly</h2>
+<p>On a normal day, often nothing you’d notice. On a harder day, it can look like heightened alertness, a strong reaction to sudden change or being put on the spot, certain pressures carrying outsized weight, occasionally needing a few minutes to reset, and sleep or concentration taking a hit. None of it is dramatic, and all of it is manageable — two of the other briefs here, on deadlines and on structure, get specific about the workplace triggers and what defuses them.</p>
+<h2>4. How to talk to me about it</h2>
+<p>This is the part most people get wrong by overthinking it. You don’t need to become a therapist, and you don’t need to handle me with kid gloves. What actually works:</p>
+<ul>
+<li><strong>Lead with respect, not pity.</strong> I’m telling you how I operate, not asking you to feel sorry for me.</li>
+<li><strong>Ask what helps — don’t assume.</strong> The specifics vary by person; the fastest path is just to ask me.</li>
+<li><strong>Keep it private.</strong> It’s my information to share, not yours to pass on.</li>
+<li><strong>Treat it as an operational fact</strong> — like anything else about how I work best, not a fragile subject to tiptoe around.</li>
+<li><strong>Don’t make me re-explain or justify it.</strong> Once is enough.</li>
+</ul>
+<p>A short, plain, direct conversation beats silence or avoidance every single time.</p>
+<h2>5. What actually helps</h2>
+<p>The rest of this briefing library is, in a sense, the long answer to that. The short one: predictability and clear intent, advance notice when things change, a low-key way to step out and reset without it becoming a thing, and judging me on what I deliver rather than on whether I look at ease every minute. Get those right and the condition mostly stays in the background, where it belongs.</p>
+<h2>6. The bottom line</h2>
+<p>When the people I work with understand this, they don’t get a liability. They get someone who has already proven they can function under conditions most people will never face — now pointing that at your mission. Understanding is the entire unlock, and it costs you a conversation.</p>
+<hr/>
+<p><em>A note: I’m a veteran, not a clinician. This is lived experience and how I’ve learned to work with it — not medical advice, and not a substitute for talking with a qualified professional or the VA. PTSD is different for everyone; this describes one set of experiences, shared in case it helps.</em></p>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>VA National Center for PTSD — <em>PTSD Basics</em> (what PTSD is; the four symptom types; that it is treatable): https://www.ptsd.va.gov/understand/what/ptsd_basics.asp</li>
+<li><em>Post-traumatic stress disorder: clinical and translational neuroscience from cells to circuits.</em> Nature Reviews Neurology (2022), via PMC (the threat-response basis; prevalence, including among combat veterans): https://pmc.ncbi.nlm.nih.gov/articles/PMC9682920/</li>
+<li>Job Accommodation Network (JAN) — <em>Post-Traumatic Stress Disorder (PTSD)</em> (PTSD presents differently in every individual; workplace accommodations): https://askjan.org/disabilities/Post-Traumatic-Stress-Disorder-PTSD.cfm</li>
+<li>U.S. Department of Labor — <em>Accommodations for Employees with Mental Health Conditions</em>: https://www.dol.gov/agencies/odep/program-areas/mental-health/maximizing-productivity-accommodations-for-employees-with-psychiatric-disabilities</li>
+</ol></div></div>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/03"><span>← Previous</span><b>Problem-Solving Under Constraint</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/05"><span>Next →</span><b>Deadlines &amp; Time Pressure</b></a></nav>
+ </div>
+</section>
+<section id="brief-05" class="view article" aria-labelledby="t-05">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">PTSD in the Workplace <span class="sep">//</span> Brief 05 of 07</p>
+   <h1 id="t-05" tabindex="-1">Deadlines, Time Pressure, and How to Get My Best Work</h1>
    <p class="standfirst">What a slipping deadline actually triggers — and how to deliver it.</p>
    <p class="kicker">A working brief for leadership · cited</p>
   </header>
@@ -321,15 +398,15 @@ Short, scheduled check-ins on longer efforts let me show progress, surface block
 <li>U.S. Army — <em>ADP 6-0, Mission Command: Command and Control of Army Forces</em> (2019), on commander’s intent and decentralized execution: https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN34403-ADP_6-0-000-WEB-3.pdf</li>
 </ol>
 <p><em>Sources are provided so the points here can be checked. Treat the clinical material as context for working together, not as a medical document.</em></p></div></div>
-  <nav class="brief-nav"><a class="bn prev" href="#/brief/03"><span>← Previous</span><b>Problem-Solving Under Constraint</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/05"><span>Next →</span><b>Structure &amp; Predictability</b></a></nav>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/04"><span>← Previous</span><b>What PTSD Means at Work</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/06"><span>Next →</span><b>Structure &amp; Predictability</b></a></nav>
  </div>
 </section>
-<section id="brief-05" class="view article" aria-labelledby="t-05">
+<section id="brief-06" class="view article" aria-labelledby="t-06">
  <div class="wrap">
   <a class="backlink" href="#/">← All briefs</a>
   <header class="brief-head">
-   <p class="eyebrow">Working With Friction Points <span class="sep">//</span> Brief 05 of 06</p>
-   <h1 id="t-05" tabindex="-1">Structure, Predictability, and Meeting Hygiene</h1>
+   <p class="eyebrow">PTSD in the Workplace <span class="sep">//</span> Brief 06 of 07</p>
+   <h1 id="t-06" tabindex="-1">Structure, Predictability, and Meeting Hygiene</h1>
    <p class="standfirst">Agendas, advance notice, and keeping bandwidth on the work.</p>
    <p class="kicker">A working brief for leadership · cited</p>
   </header>
@@ -367,15 +444,15 @@ Short, scheduled check-ins on longer efforts let me show progress, surface block
 <li>U.S. Department of Labor — <em>Accommodations for Employees with Mental Health Conditions</em>: https://www.dol.gov/agencies/odep/program-areas/mental-health/maximizing-productivity-accommodations-for-employees-with-psychiatric-disabilities</li>
 </ol>
 <p><em>The clinical material here is context for working together, not a medical document. PTSD presents differently in every individual; this describes me.</em></p></div></div>
-  <nav class="brief-nav"><a class="bn prev" href="#/brief/04"><span>← Previous</span><b>Deadlines &amp; Time Pressure</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/06"><span>Next →</span><b>The Business Case for Flexibility</b></a></nav>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/05"><span>← Previous</span><b>Deadlines &amp; Time Pressure</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/07"><span>Next →</span><b>The Business Case for Flexibility</b></a></nav>
  </div>
 </section>
-<section id="brief-06" class="view article" aria-labelledby="t-06">
+<section id="brief-07" class="view article" aria-labelledby="t-07">
  <div class="wrap">
   <a class="backlink" href="#/">← All briefs</a>
   <header class="brief-head">
-   <p class="eyebrow">The Business Case <span class="sep">//</span> Brief 06 of 06</p>
-   <h1 id="t-06" tabindex="-1">The Business Case: What Flexibility Actually Buys You</h1>
+   <p class="eyebrow">The Business Case <span class="sep">//</span> Brief 07 of 07</p>
+   <h1 id="t-07" tabindex="-1">The Business Case: What Flexibility Actually Buys You</h1>
    <p class="standfirst">Near-zero cost in. Retention and loyalty out.</p>
    <p class="kicker">A working brief for leadership · cited</p>
   </header>
@@ -400,14 +477,15 @@ Short, scheduled check-ins on longer efforts let me show progress, surface block
 <li>SHRM — on the cost of replacing an employee (50–200% of salary) and the myth of replaceability: https://www.shrm.org/executive-network/insights/myth-replaceability-preparing-loss-key-employees</li>
 <li><em>A Meta-Analytic Review of Servant Leadership</em> — trust in leader, organizational commitment, and reduced turnover intention: https://journals.aom.org/doi/10.5465/ambpp.2015.17643abstract</li>
 </ol></div></div>
-  <nav class="brief-nav"><a class="bn prev" href="#/brief/05"><span>← Previous</span><b>Structure &amp; Predictability</b></a><a class="bn home" href="#/">All briefs</a><span class="bn spacer"></span></nav>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/06"><span>← Previous</span><b>Structure &amp; Predictability</b></a><a class="bn home" href="#/">All briefs</a><span class="bn spacer"></span></nav>
  </div>
 </section>
 </main>
 <footer class="foot"><div class="wrap-wide">
  <p class="fbrand">Veteran Operating Profile</p>
- <p>A briefing library built by a collective of veterans navigating the transition to civilian work. Written in the first person so any veteran can adapt and share these with their own leadership. These are professional briefings — not medical or legal advice.</p>
- <p class="fnames">Mark Tompkins &amp; Lorenzo McCoy · and fellow veterans</p>
+ <p>Built for veterans, by veterans — to help communicate what can be hard to say in the move from military service to the corporate world. Written in the first person so any veteran can adapt and share these with their own leadership.</p>
+ <p class="fdisc">Lived veteran experiences — not medical, legal, or clinical advice, and not reviewed by a doctor. For diagnosis or treatment, speak with a qualified professional or the VA.</p>
+ <p class="fnames">Mark Tompkins · in partnership with veterans</p>
  <p><a href="#/">Return to all briefs ↑</a></p>
 </div></footer>
 <script>
@@ -420,7 +498,7 @@ Short, scheduled check-ins on longer efforts let me show progress, surface block
   views.forEach(function(v){v.classList.remove('view--active');});
   void t.offsetWidth; t.classList.add('view--active');
   var h1=t.querySelector('h1');
-  document.title=(t.id==='home'||!h1)?'Veteran Operating Profile \u2014 A Leadership Briefing'
+  document.title=(t.id==='home'||!h1)?'Veteran Operating Profile \u2014 A Briefing Library'
                  :(h1.textContent.trim()+' \u2014 Veteran Operating Profile');
   if(h1&&h.length){try{h1.focus({preventScroll:true});}catch(e){h1.focus();}}
   window.scrollTo(0,0);
