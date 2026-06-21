@@ -1,0 +1,432 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veteran Operating Profile — A Leadership Briefing</title>
+<meta name="description" content="Six cited briefings translating a combat-intelligence operating style — and the realities that come with it — into how to lead it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#14202B; --paper:#EEF0F1; --paper2:#E5E8EA; --navy:#0F1E2D;
+ --amber:#BE841F; --amber-soft:rgba(190,132,31,.10);
+ --line:#CBD2D7; --muted:#5C6B76; --on-navy:#D8DEE3; --mut-navy:#8A99A4;
+ --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+ --serif:'IBM Plex Serif',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.62;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wrap-wide{max-width:1040px;margin:0 auto;padding:0 28px;}
+
+.banner{position:sticky;top:0;z-index:50;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.10);}
+.banner .row{max-width:1040px;margin:0 auto;padding:7px 28px;display:flex;justify-content:space-between;align-items:center;
+ font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;}
+.banner a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:.55em;}
+.banner .dot{width:6px;height:6px;background:var(--amber);display:inline-block;}
+.banner .right{color:var(--mut-navy);}
+@media(max-width:560px){.banner .right{display:none;}}
+
+.view{display:none;}
+.view--active{display:block;}
+@media(prefers-reduced-motion:no-preference){
+ .view--active{animation:fade .42s ease both;}
+ @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+}
+
+.hero{background:var(--navy);color:var(--on-navy);border-bottom:3px solid var(--amber);}
+.hero .wrap-wide{padding-top:76px;padding-bottom:64px;}
+.hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin:0 0 22px;}
+.hero h1{font-family:var(--mono);font-weight:600;color:#fff;font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 22px;max-width:17ch;}
+.hero .stand{font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.55;color:var(--on-navy);max-width:60ch;margin:0;}
+.hero .meta{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut-navy);margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);}
+@media(prefers-reduced-motion:no-preference){
+ .hero .eyebrow,.hero h1,.hero .stand,.hero .meta{animation:rise .6s ease both;}
+ .hero h1{animation-delay:.06s;}.hero .stand{animation-delay:.12s;}.hero .meta{animation-delay:.18s;}
+ @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+}
+
+.index{padding:54px 0 26px;}
+.index .lead{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;}
+.grp{margin-top:38px;}
+.grp .glabel{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);
+ padding-bottom:10px;border-bottom:1px solid var(--ink);margin:0 0 2px;}
+.row{display:flex;align-items:baseline;gap:20px;text-decoration:none;color:inherit;
+ padding:18px 4px;border-bottom:1px solid var(--line);transition:background .15s,padding .15s;}
+.row:hover,.row:focus-visible{background:var(--paper2);padding-left:12px;outline:none;}
+.row .num{font-family:var(--mono);font-size:14px;color:var(--amber);min-width:2.4em;}
+.row .mid{flex:1;}
+.row .rt{display:block;font-family:var(--mono);font-size:1.12rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
+.row:hover .rt{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--amber);}
+.row .rd{display:block;font-size:1rem;color:var(--muted);margin-top:3px;}
+.row .arr{font-family:var(--mono);color:var(--amber);align-self:center;transition:transform .15s;}
+.row:hover .arr{transform:translateX(5px);}
+
+.article{padding-bottom:54px;}
+.backlink{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin:34px 0 26px;}
+.backlink:hover{color:var(--amber);}
+.brief-head{border-bottom:1px solid var(--line);padding-bottom:24px;}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 14px;}
+.eyebrow .sep{color:var(--muted);margin:0 .45em;}
+.brief-head h1{font-family:var(--mono);font-weight:600;font-size:clamp(1.6rem,4vw,2.35rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 14px;color:var(--ink);outline:none;}
+.standfirst{font-style:italic;font-size:1.18rem;line-height:1.5;color:#2C3A45;margin:0 0 14px;}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+.bluf{border-left:3px solid var(--amber);background:var(--amber-soft);padding:16px 20px;margin:26px 0 6px;}
+.bluf .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.bluf p{margin:0;font-size:1.02rem;}
+
+.body{margin-top:6px;}
+.body h2{font-family:var(--mono);font-weight:600;font-size:1.16rem;line-height:1.3;letter-spacing:-.01em;color:var(--ink);margin:36px 0 12px;padding-top:18px;border-top:1px solid var(--line);}
+.body h3{font-family:var(--mono);font-weight:600;font-size:1.02rem;color:var(--ink);margin:24px 0 8px;}
+.body p{margin:0 0 14px;}
+.body strong{font-weight:600;color:#0B141C;}
+.body ul,.body ol{margin:0 0 14px;padding-left:1.4em;}
+.body li{margin:0 0 9px;padding-left:.2em;}
+.body li::marker{color:var(--amber);}
+.body a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--line);word-break:break-word;}
+.body a:hover{text-decoration-color:var(--amber);color:var(--amber);}
+.body hr{border:0;border-top:1px solid var(--line);margin:30px 0;}
+
+.refs{margin-top:6px;}
+.refs h2{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;}
+.refs ol{font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--muted);}
+.refs li{margin-bottom:10px;}
+.refs li::marker{color:var(--amber);}
+.refs em{font-style:italic;color:var(--ink);}
+.refs a{color:var(--muted);text-decoration-color:var(--line);word-break:break-all;}
+.refs a:hover{color:var(--amber);}
+
+.brief-nav{display:flex;gap:16px;justify-content:space-between;align-items:center;margin-top:46px;border-top:1px solid var(--line);padding-top:22px;}
+.bn{flex:1;text-decoration:none;color:inherit;font-family:var(--mono);}
+.bn span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.bn b{font-weight:600;font-size:.98rem;color:var(--ink);}
+.bn.next{text-align:right;}
+.bn.home{flex:0 0 auto;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.bn.home:hover,.bn:hover b{color:var(--amber);}
+.bn.spacer{visibility:hidden;}
+
+.foot{background:var(--navy);color:var(--mut-navy);margin-top:40px;}
+.foot .wrap-wide{padding:34px 28px;}
+.foot .fbrand{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy);margin:0 0 10px;}
+.foot p{font-size:.92rem;line-height:1.55;color:var(--mut-navy);margin:0 0 8px;max-width:72ch;}
+.foot a{color:var(--on-navy);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);}
+
+.hero .byline{font-family:var(--mono);font-size:12px;letter-spacing:.07em;color:var(--on-navy);margin:15px 0 0;}
+.hero .byline strong{color:#fff;font-weight:600;}
+
+.about{border-top:1px solid var(--line);background:var(--paper);}
+.about .wrap{padding:50px 28px 14px;}
+.about .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 14px;}
+.about h2{font-family:var(--mono);font-weight:600;font-size:1.45rem;letter-spacing:-.01em;color:var(--ink);line-height:1.2;margin:0 0 16px;}
+.about p{font-size:1.05rem;line-height:1.6;color:#2C3A45;margin:0 0 14px;max-width:64ch;}
+.about .founders{font-family:var(--mono);font-size:.85rem;letter-spacing:.03em;color:var(--muted);margin-top:18px;padding-top:16px;border-top:1px solid var(--line);}
+.about .founders strong{color:var(--ink);font-weight:600;}
+.foot .fnames{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--on-navy);margin:14px 0 10px;}
+
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+</style>
+</head><body>
+<div class="banner"><div class="row"><a href="#/"><span class="dot"></span> Veteran Operating Profile</a><span class="right">A veteran collective</span></div></div>
+<main>
+<section id="home" class="view view--active">
+<header class="hero"><div class="wrap-wide">
+ <p class="eyebrow">A collective of veterans // For the civilian workplace</p>
+ <h1>How veterans operate — and how to lead them.</h1>
+ <p class="stand">We’re a group of veterans putting words to the same passage — the move from military service to the civilian workplace. The strengths we carry in, and the friction we hit. Each briefing turns that into something you can hand to a manager. Grounded in real transitions, military doctrine, and organizational‑psychology research.</p>
+ <p class="meta">Six cited briefs · For managers, HR &amp; fellow veterans</p>
+ <p class="byline">A project by <strong>Mark Tompkins</strong> &amp; <strong>Lorenzo McCoy</strong> — U.S. military veterans</p>
+</div></header>
+<section class="about"><div class="wrap">
+ <p class="lbl">About</p>
+ <h2>A collective effort.</h2>
+ <p>Veteran Operating Profile is a collaboration among veterans working through the same passage — from military service to the civilian workplace. The strengths carry over; so do the harder parts. Most managers have had neither one explained to them. These briefings close that gap.</p>
+ <p>Each brief is written in the first person by design — a voice any transitioning veteran can adopt, adapt, and hand to their own leadership. Not one person’s story, but a shared playbook drawn from many.</p>
+ <p class="founders">Founded by <strong>Mark Tompkins</strong> &amp; <strong>Lorenzo McCoy</strong> · with fellow veterans</p>
+</div></section>
+<section class="index"><div class="wrap"><p class="lead">Contents</p><div class="grp"><p class="glabel">Operating Strengths</p><a class="row" href="#/brief/01"><span class="num">01</span><span class="mid"><span class="rt">The 70% Standard</span><span class="rd">Acting on 70% of the information — decisively, not recklessly.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/02"><span class="num">02</span><span class="mid"><span class="rt">Servant Leadership</span><span class="rd">Team first — and what the research says that returns.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/03"><span class="num">03</span><span class="mid"><span class="rt">Problem-Solving Under Constraint</span><span class="rd">When the answer is “it can’t be done.”</span></span><span class="arr">→</span></a></div><div class="grp"><p class="glabel">Working With Friction Points</p><a class="row" href="#/brief/04"><span class="num">04</span><span class="mid"><span class="rt">Deadlines &amp; Time Pressure</span><span class="rd">What a slipping deadline actually triggers — and how to deliver it.</span></span><span class="arr">→</span></a><a class="row" href="#/brief/05"><span class="num">05</span><span class="mid"><span class="rt">Structure &amp; Predictability</span><span class="rd">Agendas, advance notice, and keeping bandwidth on the work.</span></span><span class="arr">→</span></a></div><div class="grp"><p class="glabel">The Business Case</p><a class="row" href="#/brief/06"><span class="num">06</span><span class="mid"><span class="rt">The Business Case for Flexibility</span><span class="rd">Near-zero cost in. Retention and loyalty out.</span></span><span class="arr">→</span></a></div></div></section>
+</section>
+
+<section id="brief-01" class="view article" aria-labelledby="t-01">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 01 of 06</p>
+   <h1 id="t-01" tabindex="-1">The 70% Standard: How I Make Decisions — and How to Resource It</h1>
+   <p class="standfirst">Acting on 70% of the information — decisively, not recklessly.</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>I act decisively on roughly 70% of the available information rather than waiting for certainty. In my prior work, waiting for 100% meant the moment — and sometimes lives — were already lost. That bias for action makes me fast and hard to bottleneck. It is <em>not</em> recklessness, and this brief draws that line clearly: it explains where the standard comes from, why it is an asset in business, where its limits are, and what you can do to get the most out of it.</p></div>
+  <div class="body"><h2>1. Where the 70% standard comes from</h2>
+<p>Military intelligence runs on timeliness. A perfect assessment delivered too late is worthless. The Army’s doctrine of <em>Mission Command</em> is built on exactly this: leaders give clear intent and then push decision-making down to the people closest to the problem, accepting that no one will ever have complete information (U.S. Army, ADP 6-0). General Colin Powell put a number on it — his well-known “40–70 rule”: gather at least 40% of the information before deciding, but never wait past about 70%, because by then the delay itself has become the bigger risk (see references). I came up inside that logic. Acting on good-enough information at the right time is a trained reflex, not a shortcut.</p>
+<h2>2. Why this is an asset in business</h2>
+<p>The same principle is a recognized source of competitive advantage outside the military. Air Force strategist John Boyd’s <strong>OODA loop</strong> (Observe, Orient, Decide, Act) holds that the side which cycles through decisions faster forces the slower side to keep reacting to a reality that has already changed (Boyd, via Richards). Speed of iteration, not perfection of the first move, is what wins in fast-moving environments.</p>
+<p>This isn’t only a military idea. Jeff Bezos has written that most decisions should be made with about 70% of the information you wish you had — wait for 90% and you’re usually too slow (Amazon shareholder letter, via CNBC). In other words, the standard I was trained on is the same one some of the most respected operators in business arrived at independently. When you see me move before everything is nailed down, that is the discipline at work, not a gap in it.</p>
+<h2>3. The honest boundary — not every decision gets the 70% treatment</h2>
+<p>This is the part that makes the standard trustworthy. Bezos’s own framing is the cleanest: some decisions are <strong>two-way doors</strong> (reversible — if it’s wrong, you walk back through and try again) and some are <strong>one-way doors</strong> (consequential and hard or impossible to reverse). Two-way doors should be made fast, at 70%. One-way doors deserve to be slowed down, with deliberation and consultation (CNBC; Amazon shareholder letters).</p>
+<p>So I apply the 70% standard to reversible calls and move quickly. For irreversible, high-consequence decisions — the ones with real safety, legal, financial, or reputational weight — I slow down on purpose. I am not arguing for speed everywhere. I’m arguing for matching the process to the stakes, which is where a lot of organizations lose time: treating reversible decisions as if they were irreversible and grinding to a halt.</p>
+<h2>4. How to resource it — four things that help</h2>
+<ol>
+<li><strong>Delegate reversible decisions to me and let me run.</strong> For two-way doors, give me the intent and the authority and don’t route it through extra consensus. This is Mission Command in practice: clear intent, decentralized execution.</li>
+<li><strong>Tell me which decisions are one-way doors.</strong> If something is genuinely irreversible or high-consequence, flag it — that’s my signal to shift from speed to deliberation. Left unflagged, my default is to move.</li>
+<li><strong>Give me the “why,” not just the “what.”</strong> Intent lets me make good calls in your absence and adapt when the situation changes. A task without intent forces me back to you for every fork in the road.</li>
+<li><strong>Don’t punish a well-reasoned reversible decision that didn’t pan out.</strong> If course-correcting is cheap, being occasionally wrong is far cheaper than being chronically slow. Treating every miss as a failure trains the whole team back into analysis paralysis — the exact thing this standard exists to defeat.</li>
+</ol>
+<h2>5. What you get in return</h2>
+<p>Decisions made at the speed the situation actually requires. Fewer bottlenecks routed up to you. A subordinate who can be handed ambiguous, time-sensitive problems and trusted to act inside your intent rather than waiting to be told. In a fast-moving environment, that tempo is a structural advantage — and it costs you nothing but a willingness to delegate the reversible calls.</p>
+<hr/>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>U.S. Army — <em>ADP 6-0, Mission Command: Command and Control of Army Forces</em> (2019), on commander’s intent and decentralized execution: https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN34403-ADP_6-0-000-WEB-3.pdf</li>
+<li>Colin Powell’s “40–70” decision rule (act on 40–70% of information rather than waiting for certainty): https://www.42courses.com/blog/home/2019/12/10/colin-powells-40-70-rule</li>
+<li>Richards, C. — peer-reviewed treatment of John Boyd’s OODA loop and decision tempo: https://ooda.de/media/chet_richards_-_boyds_ooda_loop.pdf</li>
+<li>CNBC — <em>How billionaire Jeff Bezos makes fast, smart decisions</em> (the ~70% standard; one-way vs. two-way door decisions): https://www.cnbc.com/2019/11/14/how-billionaire-jeff-bezos-makes-fast-smart-decisions-under-pressure-says-ex-amazon-manager.html</li>
+</ol></div></div>
+  <nav class="brief-nav"><span class="bn spacer"></span><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/02"><span>Next →</span><b>Servant Leadership</b></a></nav>
+ </div>
+</section>
+<section id="brief-02" class="view article" aria-labelledby="t-02">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 02 of 06</p>
+   <h1 id="t-02" tabindex="-1">Servant Leadership: Why I Put the Team First — and What It Returns</h1>
+   <p class="standfirst">Team first — and what the research says that returns.</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>My default is the team’s success over my own visibility. I will credit my people publicly, absorb blame privately, and push their careers ahead of my own profile. This is not selflessness for its own sake — it is the most reliable way I know to build cohesion and execution, and the organizational-psychology research backs the performance link. It does come with one thing I need from you, which I’ll be direct about in section 5.</p></div>
+  <div class="body"><h2>1. Where this comes from</h2>
+<p>The military operating principle is “mission first, people always.” You accomplish the objective <em>by</em> taking care of the people responsible for it — their welfare, their development, their growth into the next role. The tradition is literal: in the field, leaders eat last, after their people are fed. The logic underneath it is that a team whose leader demonstrably puts them first will execute and endure in conditions where a transactional team falls apart. I carry that wiring into civilian work. Just as I once put the safety of the people I was responsible for ahead of my own, I will put the careers of the people who report to me ahead of my own advancement.</p>
+<h2>2. What it looks like day to day</h2>
+<p>In practice: I route credit to the people who did the work. I take responsibility upward when something goes wrong rather than naming individuals. I spend real time developing my reports — coaching, sponsoring, handing them the visible wins. I will advocate for my team’s headcount, promotions, and protection before I advocate for myself.</p>
+<h2>3. The research — this is a documented high-performance model</h2>
+<p>“Servant leadership” isn’t a slogan; it’s a defined construct, coined by Robert Greenleaf in 1970 and studied for decades. The evidence is strong and consistent:</p>
+<ul>
+<li>A meta-analysis of 130 independent studies found servant leadership has predictive power <strong>over and above</strong> transformational, authentic, and ethical leadership styles, working largely through trust in the leader (Lee et al., 2020).</li>
+<li>Meta-analytic effect sizes link servant leadership to high trust in the leader, higher organizational commitment, higher job satisfaction, more organizational citizenship behavior, and <strong>lower turnover intention</strong> (Academy of Management review).</li>
+<li>A separate meta-analysis found servant leadership explains roughly <strong>12% more variance</strong> in employee outcomes than transformational leadership alone (Hoch et al.).</li>
+</ul>
+<p>Put plainly: the way I lead is associated, in the research, with exactly the outcomes a company wants from a team lead — trust, retention, and discretionary effort.</p>
+<h2>4. The honest caveat — servant leadership is not softness</h2>
+<p>This matters, because “puts the team first” can be misread as “pushover.” It isn’t, and the validated models are explicit about it: servant leadership pairs service with <strong>accountability</strong> — holding people responsible for the performance they can control, and being clear about what’s expected (van Dierendonck &amp; Nuijten, Servant Leadership Survey). I develop my people <em>and</em> I hold the line. Serving the team means giving them the support, clarity, and boundaries to succeed, not shielding them from standards. Don’t mistake the absence of self-promotion for an absence of edge.</p>
+<h2>5. The one thing I need from you</h2>
+<p>Here is the strategic catch, stated plainly because it’s in both our interests. Because I will not promote myself, <strong>my contributions can be invisible to a system that only rewards visible self-advocacy.</strong> If leadership measures impact by who claims credit in the room, I will be systematically undervalued — and you will eventually lose a high performer who never told you how much he was carrying. So:</p>
+<ul>
+<li><strong>Look actively for my fingerprints on the team’s wins</strong>, rather than waiting for me to claim them. Ask my reports where the support came from.</li>
+<li><strong>Give me a team to develop.</strong> It’s where I generate the most value, and it compounds — the people I bring along become your bench.</li>
+<li><strong>Judge me partly on my people’s growth and retention,</strong> which is the truest readout of this kind of leadership.</li>
+</ul>
+<p>Do that, and what you get is a unit with unusually high cohesion and trust, reports who stay and develop, and a lead whose entire orientation is the organization’s success rather than his own visibility. The return is real; it just won’t announce itself.</p>
+<hr/>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>Greenleaf, R. K. (1970/1977). <em>Servant Leadership</em> — origin of the construct (overview and legacy via peer-reviewed literature): https://pmc.ncbi.nlm.nih.gov/articles/PMC3152712/</li>
+<li>Lee, A., et al. (2020). <em>Servant leadership: A meta-analytic examination of incremental contribution, moderation, and mediation.</em> Journal of Occupational and Organizational Psychology (130 studies): https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/joop.12265</li>
+<li><em>A Meta-Analytic Review of Servant Leadership: Construct, Correlates, and Process</em> — effect sizes for trust, commitment, turnover intention, performance: https://journals.aom.org/doi/10.5465/ambpp.2015.17643abstract</li>
+<li>van Dierendonck, D., &amp; Nuijten, I. — <em>The Servant Leadership Survey</em> (servant leadership includes accountability): https://pmc.ncbi.nlm.nih.gov/articles/PMC3152712/</li>
+</ol></div></div>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/01"><span>← Previous</span><b>The 70% Standard</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/03"><span>Next →</span><b>Problem-Solving Under Constraint</b></a></nav>
+ </div>
+</section>
+<section id="brief-03" class="view article" aria-labelledby="t-03">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">Operating Strengths <span class="sep">//</span> Brief 03 of 06</p>
+   <h1 id="t-03" tabindex="-1">When the Answer Is “It Can’t Be Done”: How I Solve Problems</h1>
+   <p class="standfirst">When the answer is “it can’t be done.”</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>Tell me something is impossible and my training reframes it as a constraint to engineer around rather than a wall to stop at. What you’re getting is relentless, creative problem-solving under pressure. The way to deploy it is simple: bring me the stuck, “we’ve-tried-everything” problems, give me the intent and the latitude on method, and back me. This brief explains the wiring, handles the resilience piece honestly, and marks the one boundary worth respecting.</p></div>
+  <div class="body"><h2>1. The wiring</h2>
+<p>Military problem-solving culture is captured in the phrase “improvise, adapt, overcome.” The doctrine behind it is <strong>disciplined initiative</strong>: when the plan breaks contact with reality — and it always does — subordinates are expected to keep driving toward the commander’s intent on their own authority, adapting method as conditions change, and to <strong>accept prudent risk</strong> rather than freeze (U.S. Army, ADP 6-0). The reflex that gets trained into you is: the objective still stands; find another route. I don’t experience “the standard approach won’t work” as a stopping point. I experience it as the start of the actual problem.</p>
+<h2>2. The resilience piece — stated honestly</h2>
+<p>There’s a real phenomenon behind why people who’ve come through extreme adversity often bring unusual resourcefulness, and it’s worth stating precisely rather than romantically. Psychologists Richard Tedeschi and Lawrence Calhoun named it <strong>post-traumatic growth</strong>: positive changes — new problem-solving frameworks, reordered priorities, a higher tolerance for operating under pressure, a different sense of what actually constitutes a crisis — that can emerge from the <em>struggle to cope</em> with severe adversity (APA; Tedeschi &amp; Calhoun).</p>
+<p>Two honest qualifiers, because credibility depends on them. First, the growth comes from the struggle, not from the event — I am describing a capability I built, not endorsing what built it. Second, post-traumatic growth <strong>coexists with</strong> the ongoing cost; it does not cancel it out. What this means for you is concrete and not abstract: the same history that carries a real price also produced a person who is genuinely hard to rattle and unusually good at finding a path when others have concluded there isn’t one.</p>
+<h2>3. How to deploy it</h2>
+<ul>
+<li><strong>Route the hard problems to me.</strong> The intractable ones, the “we’ve exhausted the obvious options” ones, the high-ambiguity ones — that’s where this capability earns its keep. Easy, well-defined work doesn’t use it.</li>
+<li><strong>Give intent and freedom on method.</strong> Tell me the end state you need and the real constraints; let me own the <em>how</em>. Over-specifying the method removes the exact thing I’m good at.</li>
+<li><strong>Let me iterate fast.</strong> Hard problems get solved by cycling — try, observe, adjust, try again (the OODA loop). Give me room to run small experiments rather than demanding the perfect plan before any motion.</li>
+</ul>
+<h2>4. The honest boundary</h2>
+<p>“Find a way” is a strength, and it has a failure mode worth naming so it doesn’t get misused. It works when there’s a <strong>real objective and real resourcing</strong> behind it. It becomes corrosive if it’s treated as a license to pile on genuinely impossible asks with no support and assume I’ll simply absorb them — I will try to, and that’s precisely the problem. Sustainable high output comes from <em>real problems + latitude + backing</em>, not from unlimited pressure applied to someone whose wiring won’t let him say a task is undoable. The most valuable thing you can do is point this capability at problems that are hard-but-possible and resource them properly. That’s where it compounds instead of burning down.</p>
+<h2>5. What you get in return</h2>
+<p>A person who moves toward the problems other people route around — calmly, methodically, and without needing the path to be clear before he starts walking it. On the work that’s genuinely stuck, that’s often the difference between “it can’t be done” and a quiet “it’s handled.”</p>
+<hr/>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>U.S. Army — <em>ADP 6-0, Mission Command: Command and Control of Army Forces</em> (2019), on disciplined initiative and accepting prudent risk: https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN34403-ADP_6-0-000-WEB-3.pdf</li>
+<li>American Psychological Association — <em>Growth after trauma</em> (post-traumatic growth; Tedeschi &amp; Calhoun): https://www.apa.org/monitor/2016/11/growth-trauma</li>
+<li>Richards, C. — peer-reviewed treatment of John Boyd’s OODA loop (iterative problem-solving under uncertainty): https://ooda.de/media/chet_richards_-_boyds_ooda_loop.pdf</li>
+</ol>
+<p><em>The clinical material here is context for working together, not a medical document, and post-traumatic growth describes one possible outcome of adversity, not a universal rule.</em></p></div></div>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/02"><span>← Previous</span><b>Servant Leadership</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/04"><span>Next →</span><b>Deadlines &amp; Time Pressure</b></a></nav>
+ </div>
+</section>
+<section id="brief-04" class="view article" aria-labelledby="t-04">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">Working With Friction Points <span class="sep">//</span> Brief 04 of 06</p>
+   <h1 id="t-04" tabindex="-1">Deadlines, Time Pressure, and How to Get My Best Work</h1>
+   <p class="standfirst">What a slipping deadline actually triggers — and how to deliver it.</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>I treat deadlines as mission-critical, not as soft targets. That intensity is an asset — it is the reason work I own gets delivered. It also means <em>how</em> a deadline is set, changed, or flagged has an outsized effect on my output. This brief explains the wiring behind that and, more importantly, gives you a short protocol that converts it into reliability instead of friction.</p></div>
+  <div class="body"><p>None of what follows asks you to lower the bar or exempt me from deadlines. It asks for a specific <em>way</em> of running them that gets you my best work.</p>
+
+<h2>1. Why a deadline carries extra weight for me</h2>
+<p>I came up in military intelligence, where timeliness was not an administrative nicety — late information could cost lives. That environment does two things to a person, and they compound.</p>
+<p><strong>It trains the wiring.</strong> Combat and intelligence roles deliberately train operators to stay vigilant to threat and to respond fast. This is well documented: a VA-published study of active-duty service members found that vigilance and rapid threat response are reinforced by the job itself, and many service members regard that heightened state as <em>required</em> for performing the mission (Miles et al., 2022). In other words, the urgency I attach to a deadline is not a personality quirk — it was issued as standard equipment.</p>
+<p><strong>Trauma keeps the threat system online.</strong> Post-traumatic stress is, at the neural level, a threat-detection system that stays hyperactive and is not reliably quieted by “you’re safe now” signals (Nature Reviews Neurology, 2022). The VA’s plain-language description of this state — <em>hyperarousal</em> — is being constantly on alert, easily startled, and finding it hard to concentrate when the system spikes (VA National Center for PTSD). A cue that reads as <em>“you are about to fail at something time-critical”</em> can therefore produce a physical stress response well out of proportion to the actual office stakes.</p>
+<p>Put together: a deadline isn’t a date on a tracker to me. It registers as something with real weight attached. The practical consequences:</p>
+<ul>
+<li>I will rarely, if ever, be the reason something is late.</li>
+<li>A surprise deadline, a silently moved deadline, or a “by the way, that was due yesterday” can spike me into a defensive, hyper-vigilant state that <em>costs</em> performance for the rest of that day.</li>
+</ul>
+<p><strong>One honest caveat, because it keeps this credible:</strong> PTSD presents differently in every individual, and both the Job Accommodation Network and the U.S. Department of Labor stress that accommodations are individual rather than one-size-fits-all. This brief describes <em>me</em> — not a template for “veterans.”</p>
+<hr/>
+<h2>2. What this is <em>not</em></h2>
+<ul>
+<li>It is <strong>not</strong> an inability to handle pressure. The opposite is true — I run toward high-stakes, time-boxed work.</li>
+<li>It is <strong>not</strong> a request to be excused from deadlines or held to a softer standard.</li>
+<li>It is <strong>not</strong> fragility. It is a known operating characteristic with a known set of inputs that make it work in your favor.</li>
+</ul>
+<p>I am raising it precisely so you <em>don’t</em> have to manage me carefully. The five items below are the whole ask.</p>
+<hr/>
+<h2>3. The protocol — five low-cost moves that get my best output</h2>
+<p><strong>1. Give the deadline <em>with intent</em>, not just a date.</strong>
+Tell me the “why” and the priority behind it: what this feeds, who is waiting downstream, and how hard the date actually is. This mirrors how the military runs decentralized execution — leaders communicate clear <em>intent</em> and let the operator own the <em>how</em> (U.S. Army, ADP 6-0, <em>Mission Command</em>). Give me intent and a ranked priority, and I will self-organize around it without needing task-by-task management.</p>
+<p><strong>2. Flag changes early.</strong>
+If a date moves up or scope grows, tell me as soon as you know — even a rough heads-up. A compressed timeline I can see coming is a problem I solve. A compressed timeline sprung on me is a trigger. The cost of an early warning to you is one sentence.</p>
+<p><strong>3. Label hard vs. soft deadlines explicitly.</strong>
+By default I treat <em>every</em> date as a firm commitment. That is exactly what you want for the real ones and wasteful on placeholders. “This is a true drop-dead date” versus “this is a nice-to-have target” lets me spend my intensity where it actually matters.</p>
+<p><strong>4. Deliver “you’re behind” as a re-task, not a verdict.</strong>
+If I am genuinely slipping, the most effective framing is operational: <em>“Status check — where are we on X, and what do you need to land it?”</em> That keeps my problem-solving online and pointed at the work. Framing the same information as a character judgment (“I’m disappointed,” “this is becoming a pattern”) tends to trip the threat response and gets you less, not more. Identical content, better delivery, better result.</p>
+<p><strong>5. Build in checkpoints instead of one big due date.</strong>
+Short, scheduled check-ins on longer efforts let me show progress, surface blockers early, and keep the final date from becoming a single high-stakes cliff. Regular check-ins are listed by the U.S. Department of Labor as a standard, effective accommodation — and for me they are mostly about keeping the work visible and de-risked, not about reassurance.</p>
+<hr/>
+<h2>4. What you get in return</h2>
+<p>Run deadlines this way and you do not just get someone who hits dates. You get someone whose default is to absorb the time-critical, high-stakes work nobody else wants to own — and who, once he sees that leadership runs him with intent and a heads-up rather than ambush, returns a level of commitment that is hard to buy and easy to lose. The accommodation here is not charity. It is a high return on a very small change in management style.</p>
+<hr/>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>VA National Center for PTSD — <em>PTSD Basics</em> (hyperarousal, triggers, plain-language overview): https://www.ptsd.va.gov/understand/what/ptsd_basics.asp</li>
+<li>Miles, S. R., et al. (2022). <em>Hyperarousal Symptoms Linger After Successful PTSD Treatment in Active Duty Military.</em> VA National Center for PTSD / STRONG STAR Consortium (on combat-trained vigilance): https://www.ptsd.va.gov/professional/articles/article-pdf/id1597117.pdf</li>
+<li><em>Post-traumatic stress disorder: clinical and translational neuroscience from cells to circuits.</em> Nature Reviews Neurology (2022), via PMC (threat-response and hyperarousal mechanism): https://pmc.ncbi.nlm.nih.gov/articles/PMC9682920/</li>
+<li>Job Accommodation Network (JAN) — <em>Post-Traumatic Stress Disorder (PTSD)</em> accommodation guidance: https://askjan.org/disabilities/Post-Traumatic-Stress-Disorder-PTSD.cfm</li>
+<li>U.S. Department of Labor, Office of Disability Employment Policy — <em>Accommodations for Employees with Mental Health Conditions</em>: https://www.dol.gov/agencies/odep/program-areas/mental-health/maximizing-productivity-accommodations-for-employees-with-psychiatric-disabilities</li>
+<li>U.S. Army — <em>ADP 6-0, Mission Command: Command and Control of Army Forces</em> (2019), on commander’s intent and decentralized execution: https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN34403-ADP_6-0-000-WEB-3.pdf</li>
+</ol>
+<p><em>Sources are provided so the points here can be checked. Treat the clinical material as context for working together, not as a medical document.</em></p></div></div>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/03"><span>← Previous</span><b>Problem-Solving Under Constraint</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/05"><span>Next →</span><b>Structure &amp; Predictability</b></a></nav>
+ </div>
+</section>
+<section id="brief-05" class="view article" aria-labelledby="t-05">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">Working With Friction Points <span class="sep">//</span> Brief 05 of 06</p>
+   <h1 id="t-05" tabindex="-1">Structure, Predictability, and Meeting Hygiene</h1>
+   <p class="standfirst">Agendas, advance notice, and keeping bandwidth on the work.</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>Beyond deadlines, the other major source of friction for me is unpredictability — agendaless meetings, sudden changes, surprises with no stated purpose, being put on the spot without warning. Structure and clear intent keep my nervous system out of a hyper-vigilant state and keep my full capability pointed at the work. These are cheap inputs with an outsized effect, and most of them are just good management for everyone. This brief is the companion to the one on deadlines.</p></div>
+  <div class="body"><h2>1. Why unpredictability carries a cost</h2>
+<p>Post-traumatic stress keeps the brain’s threat-detection system primed and slower to stand down — clinically, <em>hyperarousal</em>: a state of being constantly on alert, easily startled, and finding it harder to concentrate when the system spikes (VA National Center for PTSD). At the neural level, the threat response is hyperactive and isn’t reliably quieted by ordinary “you’re safe” signals (Nature Reviews Neurology). The practical translation: ambiguity and surprise don’t read as neutral to me the way they might to a civilian colleague — they read as <em>potential threat</em>, and processing that pulls real cognitive resources away from the actual task. Predictability isn’t a comfort preference. It’s what keeps my bandwidth on the work instead of on scanning the room.</p>
+<h2>2. The specific friction points</h2>
+<p>To be concrete about what tends to spike it:</p>
+<ul>
+<li><strong>Agendaless meetings</strong> — walking in without knowing the purpose or what will be asked of me.</li>
+<li><strong>Being put on the spot</strong> — asked to present, decide, or defend something live with no warning.</li>
+<li><strong>Rapid changes with no stated “why”</strong> — scope, priorities, or plans shifting suddenly and without the intent behind the shift.</li>
+<li><strong>“Got a minute?” with no context</strong> — an open-ended summons reads as a threat until proven otherwise.</li>
+</ul>
+<p>None of these are about being fragile. They’re predictable inputs with predictable effects, which means they’re also easy to manage.</p>
+<h2>3. The protocol — five low-cost moves</h2>
+<ol>
+<li><strong>Send an agenda, or even a one-line purpose, before a meeting.</strong> “Want to align on the Q3 timeline and get your read on the vendor” is enough. It converts an ambush into a briefing.</li>
+<li><strong>Give advance notice of changes.</strong> A rough heads-up that a priority or plan is shifting — before it lands — turns a surprise into a problem I can get ahead of.</li>
+<li><strong>Lead with intent.</strong> Tell me the <em>why</em> behind a change or a task. This is Mission Command’s “shared understanding”: when I know the purpose, I can absorb a change and adapt to it instead of bracing against it (U.S. Army, ADP 6-0).</li>
+<li><strong>Flag if you’ll need me live.</strong> If you want me to speak, present, or decide in the moment, tell me beforehand. With a little warning I’m sharp; ambushed, I spend the first few minutes in threat mode instead of contributing.</li>
+<li><strong>Put context on the “got a minute.”</strong> “Quick one, nothing’s wrong — need your take on X” costs you four words and removes the spike entirely.</li>
+</ol>
+<h2>4. The honest framing</h2>
+<p>This is the same principle as the deadlines brief: predictable structure converts a potential trigger into full performance. It is not a request to be coddled or walked on eggshells around — it’s a request for the kind of operational clarity that, frankly, makes meetings better for everyone in them. Both the Job Accommodation Network and the U.S. Department of Labor list advance notice of changes, written agendas, and structured communication as standard, effective workplace accommodations precisely because they’re cheap and they work (JAN; DOL).</p>
+<h2>5. What you get in return</h2>
+<p>My full cognitive bandwidth aimed at the problem instead of split between the problem and watching for the next surprise. The cost to you is a handful of small habits — a sentence of context here, a heads-up there. The return is a colleague operating at his actual capability in every meeting and every transition, rather than spending the first stretch of each one climbing back down from alert.</p>
+<hr/>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>VA National Center for PTSD — <em>PTSD Basics</em> (hyperarousal: constant alert, startle, concentration difficulty): https://www.ptsd.va.gov/understand/what/ptsd_basics.asp</li>
+<li><em>Post-traumatic stress disorder: clinical and translational neuroscience from cells to circuits.</em> Nature Reviews Neurology (2022), via PMC (hyperactive threat response not quieted by safety cues): https://pmc.ncbi.nlm.nih.gov/articles/PMC9682920/</li>
+<li>U.S. Army — <em>ADP 6-0, Mission Command</em> (shared understanding and commander’s intent): https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN34403-ADP_6-0-000-WEB-3.pdf</li>
+<li>Job Accommodation Network — <em>Post-Traumatic Stress Disorder (PTSD)</em> (advance notice and structure as accommodations): https://askjan.org/disabilities/Post-Traumatic-Stress-Disorder-PTSD.cfm</li>
+<li>U.S. Department of Labor — <em>Accommodations for Employees with Mental Health Conditions</em>: https://www.dol.gov/agencies/odep/program-areas/mental-health/maximizing-productivity-accommodations-for-employees-with-psychiatric-disabilities</li>
+</ol>
+<p><em>The clinical material here is context for working together, not a medical document. PTSD presents differently in every individual; this describes me.</em></p></div></div>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/04"><span>← Previous</span><b>Deadlines &amp; Time Pressure</b></a><a class="bn home" href="#/">All briefs</a><a class="bn next" href="#/brief/06"><span>Next →</span><b>The Business Case for Flexibility</b></a></nav>
+ </div>
+</section>
+<section id="brief-06" class="view article" aria-labelledby="t-06">
+ <div class="wrap">
+  <a class="backlink" href="#/">← All briefs</a>
+  <header class="brief-head">
+   <p class="eyebrow">The Business Case <span class="sep">//</span> Brief 06 of 06</p>
+   <h1 id="t-06" tabindex="-1">The Business Case: What Flexibility Actually Buys You</h1>
+   <p class="standfirst">Near-zero cost in. Retention and loyalty out.</p>
+   <p class="kicker">A working brief for leadership · cited</p>
+  </header>
+  <div class="bluf"><span class="label">BLUF — Bottom line up front</span><p>The accommodations described across these briefs — clear intent, advance notice, structure, decision latitude, trust — cost almost nothing. What they return is disproportionate: retention, discretionary effort, and a level of loyalty that’s hard to buy. This brief makes the case in numbers, not sentiment. Treat what follows as an investment decision with a favorable return, not a concession.</p></div>
+  <div class="body"><h2>1. The accommodations are cheap</h2>
+<p>This is the part that surprises most managers. The Job Accommodation Network — a free service of the U.S. Department of Labor — has surveyed thousands of employers on what accommodations actually cost. The findings are consistent year over year: <strong>a majority cost the employer nothing at all</strong>, and of those that do carry a cost, the typical one-time expense is only a few hundred dollars (JAN, <em>Cost and Benefits of Accommodations</em>; U.S. DOL). Most of what I’m asking for isn’t even in the “cost” category — an agenda, a heads-up before a deadline moves, the “why” behind a task, authority over reversible decisions. These are management habits, not budget line items.</p>
+<p>And they work: roughly two-thirds of surveyed employers rated the accommodations they made as very or extremely effective, and <strong>more than half made an accommodation specifically to retain a valued employee</strong> (JAN). Retention is the most-cited reason employers accommodate at all — which points directly at the other side of the ledger.</p>
+<h2>2. Turnover is expensive</h2>
+<p>Here’s the cost you’re actually weighing the accommodation against. SHRM and Gallup both put the cost of replacing an employee at <strong>50% to 200% of that person’s annual salary</strong> — and the high end is where specialized, hard-to-replace roles land (SHRM; Gallup). That figure captures recruiting, onboarding, and the months a replacement takes to reach full productivity — but not the part that’s hardest to recover: institutional knowledge and team cohesion walking out the door. Gallup estimates voluntary turnover costs U.S. employers on the order of a trillion dollars a year, and that a large majority of it is preventable.</p>
+<p>So the math is not close. A near-zero-cost change in how I’m managed, weighed against a replacement cost measured in the tens or hundreds of thousands, is one of the cleaner ROI decisions a manager makes.</p>
+<h2>3. The reciprocity multiplier</h2>
+<p>Retention math alone justifies the investment. But there’s a compounding return on top of it. The leadership research is consistent that when people trust their leadership and feel genuinely supported, they reciprocate with higher organizational commitment, lower intention to leave, and more discretionary effort — the work beyond what’s strictly required (servant-leadership meta-analyses; trust-in-leader effects). That reciprocity response is not marginal in someone with my wiring. The same training that makes me treat a deadline as mission-critical makes me treat a leader who has my back as someone worth running through walls for. Support doesn’t just retain me; it converts into output.</p>
+<h2>4. The honest framing</h2>
+<p>I want to be precise about what this brief is and isn’t. It is <strong>not</strong> “tolerate me as a cost of doing business.” It’s a documented, low-cost, high-return investment — made stronger by the fact that the inputs are mostly free. The accommodation isn’t charity extended downward; it’s a management decision with a measurable payoff in retention and effort. The only thing required to capture the return is the decision to make it deliberately.</p>
+<h2>5. The ask</h2>
+<p>Treat the items in these briefs the way you’d treat any investment with a strong return and a negligible cost: make them, on purpose, and expect the payoff. The downside is a few changed habits. The upside is keeping — and fully engaging — a high performer that the replacement math says you do not want to lose.</p>
+<hr/>
+<div class="refs"><h2>References</h2>
+<ol>
+<li>Job Accommodation Network (JAN) — <em>Cost and Benefits of Accommodations</em> (most accommodations cost $0; typical one-time cost a few hundred dollars; retention as the leading motivation): https://askjan.org/topics/costs.cfm</li>
+<li>U.S. Department of Labor — <em>Report finds nearly half of accommodations for disabled workers have no cost</em> (Low Cost, High Impact): https://www.dol.gov/newsroom/releases/odep/odep20230504</li>
+<li>SHRM — on the cost of replacing an employee (50–200% of salary) and the myth of replaceability: https://www.shrm.org/executive-network/insights/myth-replaceability-preparing-loss-key-employees</li>
+<li><em>A Meta-Analytic Review of Servant Leadership</em> — trust in leader, organizational commitment, and reduced turnover intention: https://journals.aom.org/doi/10.5465/ambpp.2015.17643abstract</li>
+</ol></div></div>
+  <nav class="brief-nav"><a class="bn prev" href="#/brief/05"><span>← Previous</span><b>Structure &amp; Predictability</b></a><a class="bn home" href="#/">All briefs</a><span class="bn spacer"></span></nav>
+ </div>
+</section>
+</main>
+<footer class="foot"><div class="wrap-wide">
+ <p class="fbrand">Veteran Operating Profile</p>
+ <p>A briefing library built by a collective of veterans navigating the transition to civilian work. Written in the first person so any veteran can adapt and share these with their own leadership. These are professional briefings — not medical or legal advice.</p>
+ <p class="fnames">Mark Tompkins &amp; Lorenzo McCoy · and fellow veterans</p>
+ <p><a href="#/">Return to all briefs ↑</a></p>
+</div></footer>
+<script>
+(function(){
+ var views=[].slice.call(document.querySelectorAll('.view'));
+ function route(){
+  var h=location.hash.replace(/^#\/?/,'');
+  var m=h.match(/^brief\/(\d+)/), id=m?('brief-'+m[1]):'home';
+  var t=document.getElementById(id)||document.getElementById('home');
+  views.forEach(function(v){v.classList.remove('view--active');});
+  void t.offsetWidth; t.classList.add('view--active');
+  var h1=t.querySelector('h1');
+  document.title=(t.id==='home'||!h1)?'Veteran Operating Profile \u2014 A Leadership Briefing'
+                 :(h1.textContent.trim()+' \u2014 Veteran Operating Profile');
+  if(h1&&h.length){try{h1.focus({preventScroll:true});}catch(e){h1.focus();}}
+  window.scrollTo(0,0);
+ }
+ window.addEventListener('hashchange',route);
+ route();
+})();
+</script>
+</body></html>
